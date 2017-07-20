@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            SQLite
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>Titre</ion-label>
+            <ion-input [(ngModel)]="titleMovie" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Evaluation</ion-label>
+            <ion-input [(ngModel)]="ratingMovie" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Description</ion-label>
+            <ion-input [(ngModel)]="descriptionMovie" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Catégorie</ion-label>
+            <ion-input [(ngModel)]="categoryMovie" type="text"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button (tap)="saveMyFile()" ion-button clear>Sauvegarder mon film</button>
+</ion-content>

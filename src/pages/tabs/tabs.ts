@@ -4,6 +4,8 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { MeteoPage } from '../meteo/meteo';
+import { SQLitePage } from '../sqlite/sqlite';
+
 
 @Component({
   templateUrl: 'tabs.html'
@@ -15,6 +17,7 @@ export class TabsPage {
   tab2Root = AboutPage;
   tab3Root = ContactPage;
   tab4Root = MeteoPage;
+  tab5Root = SQLitePage;
 
   constructor() {
 

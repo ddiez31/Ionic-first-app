@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { DetailsPage } from '../pages/details/details';
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OpenweathermapApiService } from '../services/openweathermapapi.service';
+import { SQLitePage } from '../pages/sqlite/sqlite';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +25,8 @@ import { SQLite } from '@ionic-native/sqlite';
     HomePage,
     TabsPage,
     DetailsPage,
-    MeteoPage
+    MeteoPage,
+    SQLitePage
   ],
   imports: [
     HttpModule,
@@ -39,7 +41,8 @@ import { SQLite } from '@ionic-native/sqlite';
     HomePage,
     TabsPage,
     DetailsPage,
-    MeteoPage
+    MeteoPage,
+    SQLitePage
   ],
   providers: [
     OpenweathermapApiService,
