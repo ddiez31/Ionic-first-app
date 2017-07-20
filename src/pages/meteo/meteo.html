@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Météo
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="getWeather($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <h3>{{ meteo.base }}: {{ meteo.name }}</h3>
+
+    <div *ngFor="let item of meteo.weather">
+        <p>Ciel: {{ item.main }}</p>
+    </div>
+
+    <p> Vitesse de vent: {{ meteo.wind }} km</p>
+
+</ion-content>
