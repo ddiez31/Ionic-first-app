@@ -26,4 +26,11 @@
         </ion-item>
     </ion-list>
     <button (tap)="saveMyFile()" ion-button clear>Sauvegarder mon film</button>
+    <ion-list *ngIf="movies">
+        <ion-item *ngFor="let movie of movies">
+            <ion-label fixed>{{ movie }}</ion-label>
+        </ion-item>
+    </ion-list>
+    <button (tap)="retrieveFilms()" ion-button clear>Liste des films</button>
+
 </ion-content>

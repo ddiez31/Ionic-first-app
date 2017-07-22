@@ -12,6 +12,7 @@ const DATABASE_FILE_NAME: string = 'data.db';
 export class SQLitePage {
 
     private db: SQLiteObject;
+    movies: string[] = [];
     titleMovie: string;
     ratingMovie: number;
     descriptionMovie: string;
@@ -58,6 +59,28 @@ export class SQLitePage {
                     .catch(e => console.log(e));
             })
             .catch(e => console.log(e));
-
     }
+
+    public retrieveFilms() {
+        this.movies = [];
+        this.db.executeSql('SELECT name FROM `movies`', {})
+            .then((data) => {
+                if (data == null) {
+                    return;
+                }
+                if (data.rows) {
+                    if (data.rows.lenght > 0) {
+                        for (var i = 0; i < data.rows.lenght; i++) {
+                            this.movies.push(data.rows.item(i).name)
+                        }
+                    }
+                }
+                console.log('Catégorie insérée');
+                this.db.executeSql('INSERT INTO `movies` (name, eval, desc, categoryid) VALUES (\'' + this.titleMovie + '\', ' + this.ratingMovie + ', \'' + this.descriptionMovie + '\', last_insert_rowid())', {})
+                    .then(() => console.log('Film inséré'))
+                    .catch(e => console.log(e));
+            })
+            .catch(e => console.log(e));
+    }
+
 }
