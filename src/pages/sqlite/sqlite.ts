@@ -50,9 +50,14 @@ export class SQLitePage {
         console.log('Evaluation: ' + this.ratingMovie);
         console.log('Description: ' + this.descriptionMovie);
         console.log('Catégorie: ' + this.categoryMovie);
-
-        // INSERT INTO 'categories' (name) VALUES ('test');
-        // INSERT INTO 'movies' (name, eval, desc, categoryid) VALUES ('film', 3, 'test', 1);
+        this.db.executeSql('INSERT INTO `categories` (name) VALUES (\'' + this.categoryMovie + '\')', {})
+            .then(() => {
+                console.log('Catégorie insérée');
+                this.db.executeSql('INSERT INTO `movies` (name, eval, desc, categoryid) VALUES (\'' + this.titleMovie + '\', ' + this.ratingMovie + ', \'' + this.descriptionMovie + '\', last_insert_rowid())', {})
+                    .then(() => console.log('Film inséré'))
+                    .catch(e => console.log(e));
+            })
+            .catch(e => console.log(e));
 
     }
 }
