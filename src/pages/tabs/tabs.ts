@@ -5,6 +5,8 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { MeteoPage } from '../meteo/meteo';
 import { SQLitePage } from '../sqlite/sqlite';
+import { MapsPage } from '../maps/maps';
+
 
 
 @Component({
@@ -14,7 +16,8 @@ import { SQLitePage } from '../sqlite/sqlite';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
+  tab2Root = MapsPage;
+  // tab2Root = AboutPage;
   tab3Root = ContactPage;
   tab4Root = MeteoPage;
   tab5Root = SQLitePage;

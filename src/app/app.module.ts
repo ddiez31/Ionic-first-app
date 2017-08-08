@@ -12,10 +12,12 @@ import { DetailsPage } from '../pages/details/details';
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OpenweathermapApiService } from '../services/openweathermapapi.service';
 import { SQLitePage } from '../pages/sqlite/sqlite';
+import { MapsPage } from '../pages/maps/maps';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite } from '@ionic-native/sqlite';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { SQLite } from '@ionic-native/sqlite';
     TabsPage,
     DetailsPage,
     MeteoPage,
-    SQLitePage
+    SQLitePage,
+    MapsPage
   ],
   imports: [
     HttpModule,
@@ -42,13 +45,15 @@ import { SQLite } from '@ionic-native/sqlite';
     TabsPage,
     DetailsPage,
     MeteoPage,
-    SQLitePage
+    SQLitePage,
+    MapsPage
   ],
   providers: [
     OpenweathermapApiService,
     StatusBar,
     SplashScreen,
     SQLite,
+    GoogleMaps,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
