@@ -1,23 +1,23 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Home</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-label floating>Nom</ion-label>
-            <ion-input [(ngModel)]="nom" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Prénom</ion-label>
-            <ion-input [(ngModel)]="prenom" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Age</ion-label>
-            <ion-input [(ngModel)]="age" type="number"></ion-input>
-        </ion-item>
-    </ion-list>
-    <button id="btnValid" (tap)="showDetails()" ion-button large>Valider</button>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nom</ion-label>
+      <ion-input [(ngModel)]="nom" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Prénom</ion-label>
+      <ion-input [(ngModel)]="prenom" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Age</ion-label>
+      <ion-input [(ngModel)]="age" type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button id="btnValid" (tap)="showDetails()" ion-button large>Valider</button>
 </ion-content>
