@@ -1,23 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label floating>Nom</ion-label>
-      <ion-input [(ngModel)]="nom" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Prénom</ion-label>
-      <ion-input [(ngModel)]="prenom" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Age</ion-label>
-      <ion-input [(ngModel)]="age" type="number"></ion-input>
-    </ion-item>
-  </ion-list>
-  <button id="btnValid" (tap)="showDetails()" ion-button large>Valider</button>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Nom</ion-label>
+            <ion-input [(ngModel)]="nom" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Prénom</ion-label>
+            <ion-input [(ngModel)]="prenom" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Age</ion-label>
+            <ion-input [(ngModel)]="age" type="number"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button id="btnValid" (tap)="showDetails()" ion-button large>Valider</button>
+    <div class="intro-wrapper">
+        <p>Appuyez sur 'Lancer !' puis parlez à votre appareil de manière claire et reposée</p>
+        <button ion-button [color]="(isListening) ? 'danger' : 'secondary'" (tap)="(isListening) ? stopListening() : startListening()">
+      {{ (isListening) ? 'Stop !' : 'Lancer !' }}
+    </button>
+    </div>
+    <ion-list class="matches-wrapper">
+        <ion-item *ngIf="matches.length <= 0">
+            Aucun résultat :S
+        </ion-item>
+        <ion-item *ngFor="let match of matches">
+            {{ match }}
+        </ion-item>
+    </ion-list>
 </ion-content>
