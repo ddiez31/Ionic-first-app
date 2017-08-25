@@ -4,18 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { OneSignal } from '@ionic-native/onesignal';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
-import { Deploy } from '@ionic/cloud-angular';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-@Component({
-  templateUrl: 'app.html'
-})
-
+@Component({ templateUrl: 'app.html' })
 export class MyApp {
   rootPage: any = TabsPage;
 
-  constructor(public deploy: Deploy, private speechRecognition: SpeechRecognition, private oneSignal: OneSignal, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(private speechRecognition: SpeechRecognition, private oneSignal: OneSignal, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available. Here you can do
       // any higher level native things you might need.
